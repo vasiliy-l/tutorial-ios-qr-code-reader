@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import AVFoundation
 
 class QRScannerController: UIViewController {
 
     @IBOutlet var messageLabel:UILabel!
     @IBOutlet var topbar: UIView!
+    
+    var captureSession = AVCaptureSession()
+    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    var qrCodeFrameView: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,4 +40,8 @@ class QRScannerController: UIViewController {
     }
     */
 
+}
+
+extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
+    
 }
